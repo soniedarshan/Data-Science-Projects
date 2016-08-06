@@ -1,9 +1,10 @@
-Music Recommender System using Apache Spark and Python
+<center><h3>Music Recommender System using Apache Spark and Python</h3></center>
 
-Description:
+<b>Description:</b>
 
 A music recommender system using Apache Spark MLib library that recommends new musical artists to a user based on their listening history using Spark and Collaborative Filtering Technique. Data from audio scribbler is used to develop and test the model. The model is based on implicit feedback and was evaluated against validation data for accuracy
 
 Based on paper: http://yifanhu.net/PUB/cf.pdf<br/>
 
+<b>Dataset</b>
 http://www-etud.iro.umontreal.ca/~bergstrj/audioscrobbler_data.html<br/>
