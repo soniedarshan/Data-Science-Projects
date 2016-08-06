@@ -4,7 +4,7 @@ Description:
 
 A music recommender system using Apache Spark MLib library that recommends new musical artists to a user based on their listening history using Spark and Collaborative Filtering Technique. Data from audio scribbler is used to develop and test the model. The model is based on implicit feedback and was evaluated against validation data for accuracy
 
-Based on paper: http://yifanhu.net/PUB/cf.pdf<br/>
+Based on paper: http://yifanhu.net/PUB/cf.pdf
 
 Dataset:
-http://www-etud.iro.umontreal.ca/~bergstrj/audioscrobbler_data.html<br/>
+http://www-etud.iro.umontreal.ca/~bergstrj/audioscrobbler_data.html
