@@ -1,0 +1,35 @@
+Apache Spark + Kafta Data Streaming Application for real-time Sentiment Analysis on tweets.
+Getting introduced to Spark Streaming and Apache Kafka. We use Kafka to buffer the tweets before processing. Kafka provides a
+distributed queuing service which can be used to store the data when the data creation rate is more than processing rate.
+
+
+Installing and Initializing Kafka
+Download and extract the latest binary from https://kafka.apache.org/downloads.html
+Start zookeeper service:
+$ bin / zookeeper - server - start . sh config / zookeeper . properties
+Start kafka service:
+$ bin / kafka - server - start . sh config / server . properties
+Create a topic named twitterstream in kafka:
+$ bin / kafka - topics . sh -- create -- zookeeper localhost : 2181 -- replication - f actor 1
+-- partitions 1 -- topic twitterstream
+Check what topics you have with:
+$ bin / kafka - topics . sh -- list -- zookeeper localhost : 2181
+Using the Twitter Streaming API
+In order to download the tweets from twitter streaming API and push them to kafka queue, we
+have provided a python script t witter_to_kafka.py. The script will need your twitter
+authentication tokens (keys). A guide to create an app on twitter to get your authentication
+tokens can be found here .
+Once you have your authentication tokens, create or update the t witter.txt file with these
+credentials. Note, never commit your credentials on code sharing websites, such as Github.
+After updating the text file with your twitter keys, you can start downloading tweets from the
+twitter stream API and push them to the twitterstream topic in Kafka. Do this by running our
+program as follows:
+$ python twitter_to_kafka . py
+Note, this program must be running when you run your portion of the assignment, otherwise you
+will not get any tweets.
+To check if the data is landing in Kafka:
+$ bin/ k afka- c onsole- c onsumer. s h - -z ookeeper localhost: 2 181 - -t opic twitterstream
+-- from - beginning
+Running the Stream Analysis Program
+$ $SPARK_HOME/ b in/ s park- s ubmit - -p ackages org. a pache. s park: s park- s treaming- k afka_2. 1 0: 1 .5. 1
+twitterStream . py
